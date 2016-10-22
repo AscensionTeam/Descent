@@ -43,9 +43,11 @@ public class GameController : MonoBehaviour {
     /// <returns>Systems.</returns>
     Systems CreateSystems(Pools pools) {
         /* Create System(s) */
-        return new Feature("Systems");
+        return new Feature("Systems")
 
-            // Example.
-            //.Add(pools.<pool>.CreateSystem(new <System>()));
+            /* Render */
+            .Add(pools.gameboard.CreateSystem(new GameboardRemoveViewSystem()))
+            .Add(pools.gameboard.CreateSystem(new GameboardAddViewSystem()))
+            .Add(pools.gameboard.CreateSystem(new GameboardUpdateViewPositionSystem()));
     }
 }

@@ -8,11 +8,21 @@
 //------------------------------------------------------------------------------
 public static class GameboardComponentIds {
 
-    public const int TotalComponents = 0;
+    public const int Asset = 0;
+    public const int Position = 1;
+    public const int View = 2;
+
+    public const int TotalComponents = 3;
 
     public static readonly string[] componentNames = {
+        "Asset",
+        "Position",
+        "View"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AssetComponent),
+        typeof(PositionComponent),
+        typeof(ViewComponent)
     };
 }

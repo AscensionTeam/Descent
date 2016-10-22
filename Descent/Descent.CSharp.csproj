@@ -158,13 +158,22 @@
     <Compile Include="Assets\Sources\Blackboard\Interface\ISetObject.cs" />
     <Compile Include="Assets\Sources\Blackboard\Interface\ISetValue.cs" />
     <Compile Include="Assets\Sources\Features\Components\ActionPool\ActionComponent.cs" />
-    <Compile Include="Assets\Sources\Features\Systems\GameboardPool\GameboardBuildSystem.cs" />
+    <Compile Include="Assets\Sources\Features\Components\GameboardPool\AssetComponent.cs" />
+    <Compile Include="Assets\Sources\Features\Components\GameboardPool\PositionComponent.cs" />
+    <Compile Include="Assets\Sources\Features\Components\GameboardPool\ViewComponent.cs" />
+    <Compile Include="Assets\Sources\Features\Systems\GameboardPool\Construction\GameboardConstructSystem.cs" />
+    <Compile Include="Assets\Sources\Features\Systems\GameboardPool\Movement\GameboardUpdateViewPositionSystem.cs" />
+    <Compile Include="Assets\Sources\Features\Systems\GameboardPool\View\GameboardAddViewSystem.cs" />
+    <Compile Include="Assets\Sources\Features\Systems\GameboardPool\View\GameboardRemoveViewSystem.cs" />
     <Compile Include="Assets\Sources\Generated\ActionAttribute.cs" />
     <Compile Include="Assets\Sources\Generated\ActionComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\ActionComponentIds.cs" />
+    <Compile Include="Assets\Sources\Generated\AssetComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\GameboardAttribute.cs" />
     <Compile Include="Assets\Sources\Generated\GameboardComponentIds.cs" />
     <Compile Include="Assets\Sources\Generated\Pools.cs" />
+    <Compile Include="Assets\Sources\Generated\PositionComponentGeneratedExtension.cs" />
+    <Compile Include="Assets\Sources\Generated\ViewComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Helper\Action\Action.cs" />
     <Compile Include="Assets\Sources\Helper\Action\ActionType.cs" />
   </ItemGroup>
