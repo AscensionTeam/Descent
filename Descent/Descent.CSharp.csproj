@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.4.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -75,6 +77,15 @@
     </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Libraries\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+      <HintPath>Assets\Libraries\DOTween\DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>Assets\Libraries\DOTween\DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>Assets\Libraries\DOTween\DOTween50.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -139,16 +150,24 @@
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\GameObjectDestroyExtension.cs" />
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\PoolObserver\PoolObserver.cs" />
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\PoolObserver\PoolObserverBehaviour.cs" />
-    <Compile Include="Assets\Sources\Generated\CoreAttribute.cs" />
-    <Compile Include="Assets\Sources\Generated\CoreComponentIds.cs" />
+    <Compile Include="Assets\Scripts\EntityLink.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\SoundController.cs" />
+    <Compile Include="Assets\Sources\Extensions\Event\Event.cs" />
+    <Compile Include="Assets\Sources\Extensions\Event\EventType.cs" />
+    <Compile Include="Assets\Sources\Features\Components\ActionPool\ActionComponent.cs" />
+    <Compile Include="Assets\Sources\Generated\ActionAttribute.cs" />
+    <Compile Include="Assets\Sources\Generated\ActionComponentGeneratedExtension.cs" />
+    <Compile Include="Assets\Sources\Generated\ActionComponentIds.cs" />
+    <Compile Include="Assets\Sources\Generated\GameboardAttribute.cs" />
+    <Compile Include="Assets\Sources\Generated\GameboardComponentIds.cs" />
     <Compile Include="Assets\Sources\Generated\Pools.cs" />
-    <Compile Include="Assets\Sources\Generated\ReactionAttribute.cs" />
-    <Compile Include="Assets\Sources\Generated\ReactionComponentIds.cs" />
-    <Compile Include="Assets\Sources\Generated\UiAttribute.cs" />
-    <Compile Include="Assets\Sources\Generated\UiComponentIds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Libraries\DOTween\DOTween.XML" />
+    <None Include="Assets\Libraries\DOTween\DOTween43.xml" />
+    <None Include="Assets\Libraries\DOTween\DOTween46.xml" />
+    <None Include="Assets\Libraries\DOTween\DOTween50.xml" />
     <None Include="Assets\Libraries\DOTween\Editor\DOTweenEditor.XML" />
     <None Include="Assets\Libraries\DOTween\readme.txt" />
   </ItemGroup>

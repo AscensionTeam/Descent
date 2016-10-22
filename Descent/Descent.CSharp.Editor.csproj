@@ -121,6 +121,15 @@
     <Reference Include="DOTween">
       <HintPath>Assets\Libraries\DOTween\DOTween.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween43">
+      <HintPath>Assets\Libraries\DOTween\DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>Assets\Libraries\DOTween\DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>Assets\Libraries\DOTween\DOTween50.dll</HintPath>
+    </Reference>
     <Reference Include="DOTweenEditor">
       <HintPath>Assets\Libraries\DOTween\Editor\DOTweenEditor.dll</HintPath>
     </Reference>
@@ -205,9 +214,13 @@
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\Entity\Editor\TypeDrawer\Vector3TypeDrawer.cs" />
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\Entity\Editor\TypeDrawer\Vector4TypeDrawer.cs" />
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\PoolObserver\Editor\PoolObserverInspector.cs" />
+    <Compile Include="Assets\Scripts\Editor\EntityLinkInspector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Libraries\DOTween\DOTween.XML" />
+    <None Include="Assets\Libraries\DOTween\DOTween43.xml" />
+    <None Include="Assets\Libraries\DOTween\DOTween46.xml" />
+    <None Include="Assets\Libraries\DOTween\DOTween50.xml" />
     <None Include="Assets\Libraries\DOTween\Editor\DOTweenEditor.XML" />
     <None Include="Assets\Libraries\DOTween\readme.txt" />
   </ItemGroup>

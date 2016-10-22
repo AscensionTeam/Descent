@@ -10,28 +10,22 @@ namespace Entitas {
 
     public partial class Pools {
 
-        public static Pool CreateCorePool() {
-            return CreatePool("Core", CoreComponentIds.TotalComponents, CoreComponentIds.componentNames, CoreComponentIds.componentTypes);
+        public static Pool CreateActionPool() {
+            return CreatePool("Action", ActionComponentIds.TotalComponents, ActionComponentIds.componentNames, ActionComponentIds.componentTypes);
         }
 
-        public static Pool CreateReactionPool() {
-            return CreatePool("Reaction", ReactionComponentIds.TotalComponents, ReactionComponentIds.componentNames, ReactionComponentIds.componentTypes);
+        public static Pool CreateGameboardPool() {
+            return CreatePool("Gameboard", GameboardComponentIds.TotalComponents, GameboardComponentIds.componentNames, GameboardComponentIds.componentTypes);
         }
 
-        public static Pool CreateUiPool() {
-            return CreatePool("Ui", UiComponentIds.TotalComponents, UiComponentIds.componentNames, UiComponentIds.componentTypes);
-        }
+        public Pool[] allPools { get { return new [] { action, gameboard }; } }
 
-        public Pool[] allPools { get { return new [] { core, reaction, ui }; } }
-
-        public Pool core;
-        public Pool reaction;
-        public Pool ui;
+        public Pool action;
+        public Pool gameboard;
 
         public void SetAllPools() {
-            core = CreateCorePool();
-            reaction = CreateReactionPool();
-            ui = CreateUiPool();
+            action = CreateActionPool();
+            gameboard = CreateGameboardPool();
         }
     }
 }
