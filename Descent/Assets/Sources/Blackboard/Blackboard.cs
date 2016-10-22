@@ -10,6 +10,11 @@ namespace Descent.Data
     public class Blackboard : IBlackboard
     {
         /// <summary>
+        /// Blackboard Shared Instance.
+        /// </summary>
+        public static Blackboard Shared = new Blackboard();
+
+        /// <summary>
         /// Get Object Method.
         /// </summary>
         /// <param name="Key">Key.</param>
