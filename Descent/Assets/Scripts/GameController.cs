@@ -1,6 +1,8 @@
 using Entitas;
 using UnityEngine;
 
+// Created: 22/10/2016 ~ Alexander Hunt.
+
 /// <summary>
 /// Game Controller Class.
 /// </summary>

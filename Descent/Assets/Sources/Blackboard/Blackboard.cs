@@ -4,6 +4,8 @@ using System;
 
 namespace Descent.Data
 {
+    // Created: 22/10/2016 ~ Alexander Hunt.
+
     /// <summary>
     /// Blackboard Class.
     /// </summary>

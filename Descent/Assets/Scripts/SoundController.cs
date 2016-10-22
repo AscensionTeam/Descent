@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+// Created: 22/10/2016 ~ Alexander Hunt.
+
+/// <summary>
+/// Sound Controller Class.
+/// </summary>
 public class SoundController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

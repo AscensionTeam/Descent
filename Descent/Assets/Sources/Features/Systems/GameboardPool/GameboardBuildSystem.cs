@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Entitas;
+
 using System.Collections.Generic;
-using Entitas;
+using System;
+
+// Created: 22/10/2016 ~ Alexander Hunt.
 
 public class GameboardBuildSystem : IReactiveSystem
 {
