@@ -161,6 +161,7 @@
     <Compile Include="Assets\Sources\Features\Components\GameboardPool\AssetComponent.cs" />
     <Compile Include="Assets\Sources\Features\Components\GameboardPool\PositionComponent.cs" />
     <Compile Include="Assets\Sources\Features\Components\GameboardPool\ViewComponent.cs" />
+    <Compile Include="Assets\Sources\Features\Systems\ActionPool\ActionCleanupSystem.cs" />
     <Compile Include="Assets\Sources\Features\Systems\GameboardPool\Construction\GameboardConstructSystem.cs" />
     <Compile Include="Assets\Sources\Features\Systems\GameboardPool\Movement\GameboardUpdateViewPositionSystem.cs" />
     <Compile Include="Assets\Sources\Features\Systems\GameboardPool\View\GameboardAddViewSystem.cs" />

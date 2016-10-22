@@ -48,6 +48,9 @@ public class GameController : MonoBehaviour {
             /* Render */
             .Add(pools.gameboard.CreateSystem(new GameboardRemoveViewSystem()))
             .Add(pools.gameboard.CreateSystem(new GameboardAddViewSystem()))
-            .Add(pools.gameboard.CreateSystem(new GameboardUpdateViewPositionSystem()));
+            .Add(pools.gameboard.CreateSystem(new GameboardUpdateViewPositionSystem()))
+
+            /* Cleanup */
+            .Add(pools.action.CreateSystem(new ActionCleanupSystem()));
     }
 }
