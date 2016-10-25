@@ -5,6 +5,9 @@ using System;
 
 // Created: 22/10/2016 ~ Alexander Hunt.
 
+/// <summary>
+/// Gameboard Construct System.
+/// </summary>
 public class GameboardConstructSystem : IReactiveSystem
 {
     public TriggerOnEvent trigger
