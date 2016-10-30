@@ -1,5 +1,5 @@
 ﻿using Descent.Data.Interface;
-
+using System.Collections.Generic;
 using System;
 
 namespace Descent.Data
@@ -16,6 +16,9 @@ namespace Descent.Data
         /// </summary>
         public static Blackboard Shared = new Blackboard();
 
+
+        Dictionary<String, Object> values;
+
         /// <summary>
         /// Get Object Method.
         /// </summary>
@@ -23,8 +26,7 @@ namespace Descent.Data
         /// <returns>Object.</returns>
         public object GetObject(string Key)
         {
-            /* TODO: Code. */
-            throw new NotImplementedException();
+            return values[Key];
         }
 
         /// <summary>
@@ -34,8 +36,7 @@ namespace Descent.Data
         /// <param name="Value">Value.</param>
         public void SetObject(string Key, object Value)
         {
-            /* TODO: Code. */
-            throw new NotImplementedException();
+           values[Key] = Value;
         }
 
         /// <summary>
@@ -46,8 +47,7 @@ namespace Descent.Data
         /// <returns>Value.</returns>
         public T GetValue<T>(string Key)
         {
-            /* TODO: Code. */
-            throw new NotImplementedException();
+            return (T)values[Key];
         }
 
         /// <summary>
@@ -58,8 +58,7 @@ namespace Descent.Data
         /// <param name="Value">Value.</param>
         public void SetValue<T>(string Key, T Value)
         {
-            /* TODO: Code. */
-            throw new NotImplementedException();
+            values[Key] = Value;
         }
     }
 }
