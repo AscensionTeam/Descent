@@ -15,7 +15,7 @@ namespace Entitas {
         public ActionComponent action { get { return (ActionComponent)GetComponent(ActionComponentIds.Action); } }
         public bool hasAction { get { return HasComponent(ActionComponentIds.Action); } }
 
-        public Entity AddAction(int newLayer, int newType, object[] newArgs) {
+        public Entity AddAction(int newLayer, string newType, object[] newArgs) {
             var component = CreateComponent<ActionComponent>(ActionComponentIds.Action);
             component.Layer = newLayer;
             component.Type = newType;
@@ -23,7 +23,7 @@ namespace Entitas {
             return AddComponent(ActionComponentIds.Action, component);
         }
 
-        public Entity ReplaceAction(int newLayer, int newType, object[] newArgs) {
+        public Entity ReplaceAction(int newLayer, string newType, object[] newArgs) {
             var component = CreateComponent<ActionComponent>(ActionComponentIds.Action);
             component.Layer = newLayer;
             component.Type = newType;

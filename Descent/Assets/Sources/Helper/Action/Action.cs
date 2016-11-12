@@ -16,7 +16,7 @@ namespace Descent.Helper
         /// <param name="Type">Action Type.</param>
         /// <param name="Args">Action Argument(s).</param>
         /// <returns>Action Pool Entity.</returns>
-        public static Entity Create(int Layer, int Type, params object[] Args)
+        public static Entity Create(int Layer, string Type, params object[] Args)
         {
             /* Create & Return Action Entity. */
             return Pools.sharedInstance.action.CreateEntity()

@@ -22,6 +22,15 @@ namespace Descent.Data
         private Dictionary<String, Object> Values;
 
         /// <summary>
+        /// Blackboard Constructor.
+        /// </summary>
+        public Blackboard()
+        {
+            /* Create Dictionary */
+            Values = new Dictionary<String, Object>();
+        }
+
+        /// <summary>
         /// Get Object Method.
         /// </summary>
         /// <param name="Key">Key.</param>

@@ -16,7 +16,7 @@ public class ActionComponent : IComponent {
     /// <summary>
     /// Action Type.
     /// </summary>
-    public int Type;
+    public string Type;
 
     /// <summary>
     /// Action Argument(s).
