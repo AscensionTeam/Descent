@@ -150,6 +150,7 @@
     <Compile Include="Assets\Scripts\EntityLink.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\SoundController.cs" />
+    <Compile Include="Assets\Scripts\TestController.cs" />
     <Compile Include="Assets\Sources\Blackboard\Blackboard.cs" />
     <Compile Include="Assets\Sources\Blackboard\Interface\IBlackboard.cs" />
     <Compile Include="Assets\Sources\Blackboard\Interface\IGetObject.cs" />

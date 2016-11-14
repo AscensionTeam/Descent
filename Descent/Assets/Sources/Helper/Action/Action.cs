@@ -29,7 +29,7 @@ namespace Descent.Helper
             /* Create & Return Action Entity. */
             return Pools.sharedInstance.action.CreateEntity()
                 /* Create Action Component. */
-                .AddAction(0, ActionType.LoadLevel, new [] { File });
+                .AddAction(0, ActionType.LoadLevel, new[] { File });
         }
     }
 }
