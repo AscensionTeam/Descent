@@ -45,6 +45,9 @@ public class GameController : MonoBehaviour {
         /* Create System(s) */
         return new Feature("Systems")
 
+            /* Level */
+            .Add(pools.gameboard.CreateSystem(new GameboardLoadLevelSystem()))
+
             /* Render */
             .Add(pools.gameboard.CreateSystem(new GameboardRemoveViewSystem()))
             .Add(pools.gameboard.CreateSystem(new GameboardAddViewSystem()))

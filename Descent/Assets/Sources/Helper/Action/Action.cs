@@ -23,5 +23,13 @@ namespace Descent.Helper
                 /* Create Action Component. */
                 .AddAction(Layer, Type, Args);
         }
+
+        public static Entity LoadLevel(string File)
+        {
+            /* Create & Return Action Entity. */
+            return Pools.sharedInstance.action.CreateEntity()
+                /* Create Action Component. */
+                .AddAction(0, ActionType.LoadLevel, new [] { File });
+        }
     }
 }

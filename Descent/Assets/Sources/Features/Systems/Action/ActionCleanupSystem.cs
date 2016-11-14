@@ -3,21 +3,21 @@
 /// <summary>
 /// Action Cleanup System.
 /// </summary>
-public class ActionCleanupSystem : ISetPools, IExecuteSystem
+public class ActionCleanupSystem : ISetPool, IExecuteSystem
 {
     /// <summary>
     /// Action Pool.
     /// </summary>
-    Pool _action;
+    Pool _pool;
 
     /// <summary>
-    /// Set Pools Method.
+    /// Set Pool Method.
     /// </summary>
-    /// <param name="pools">Pools.</param>
-    public void SetPools(Pools pools)
+    /// <param name="pool">Pool.</param>
+    public void SetPool(Pool pool)
     {
         /* Cache Pool. */
-        _action = pools.action;
+        _pool = pool;
     }
 
     /// <summary>
@@ -26,10 +26,10 @@ public class ActionCleanupSystem : ISetPools, IExecuteSystem
     public void Execute()
     {
         /* Loop Action Entity(s). */
-        foreach (var e in _action.GetEntities())
+        foreach (var e in _pool.GetEntities())
         {
             /* Destory Event Entity. */
-            _action.DestroyEntity(e);
+            _pool.DestroyEntity(e);
         }
     }
 }

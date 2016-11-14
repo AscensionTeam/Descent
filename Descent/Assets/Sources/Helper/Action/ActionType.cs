@@ -8,5 +8,7 @@ namespace Descent.Helper
     /// Action Type Class.
     /// </summary>
     public static class ActionType
-    { }
+    {
+        public const string LoadLevel = "System.Level.Load";
+    }
 }
