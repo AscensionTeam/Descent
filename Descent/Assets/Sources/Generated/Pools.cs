@@ -10,22 +10,22 @@ namespace Entitas {
 
     public partial class Pools {
 
-        public static Pool CreateActionPool() {
-            return CreatePool("Action", ActionComponentIds.TotalComponents, ActionComponentIds.componentNames, ActionComponentIds.componentTypes);
-        }
-
         public static Pool CreateGameboardPool() {
             return CreatePool("Gameboard", GameboardComponentIds.TotalComponents, GameboardComponentIds.componentNames, GameboardComponentIds.componentTypes);
         }
 
-        public Pool[] allPools { get { return new [] { action, gameboard }; } }
+        public static Pool CreateOccurrencePool() {
+            return CreatePool("Occurrence", OccurrenceComponentIds.TotalComponents, OccurrenceComponentIds.componentNames, OccurrenceComponentIds.componentTypes);
+        }
 
-        public Pool action;
+        public Pool[] allPools { get { return new [] { gameboard, occurrence }; } }
+
         public Pool gameboard;
+        public Pool occurrence;
 
         public void SetAllPools() {
-            action = CreateActionPool();
             gameboard = CreateGameboardPool();
+            occurrence = CreateOccurrencePool();
         }
     }
 }

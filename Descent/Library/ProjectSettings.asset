@@ -343,7 +343,24 @@ PlayerSettings:
   psp2UseDebugIl2cppLibs: 0
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: ENTITAS_FAST_AND_UNSAFE
+    2: ENTITAS_FAST_AND_UNSAFE
+    4: ENTITAS_FAST_AND_UNSAFE
+    5: ENTITAS_FAST_AND_UNSAFE
+    6: ENTITAS_FAST_AND_UNSAFE
+    7: ENTITAS_FAST_AND_UNSAFE
+    13: ENTITAS_FAST_AND_UNSAFE
+    14: ENTITAS_FAST_AND_UNSAFE
+    17: ENTITAS_FAST_AND_UNSAFE
+    18: ENTITAS_FAST_AND_UNSAFE
+    19: ENTITAS_FAST_AND_UNSAFE
+    20: ENTITAS_FAST_AND_UNSAFE
+    21: ENTITAS_FAST_AND_UNSAFE
+    22: ENTITAS_FAST_AND_UNSAFE
+    23: ENTITAS_FAST_AND_UNSAFE
+    24: ENTITAS_FAST_AND_UNSAFE
+    25: ENTITAS_FAST_AND_UNSAFE
   metroPackageName: Descent
   metroPackageVersion: 
   metroCertificatePath: 

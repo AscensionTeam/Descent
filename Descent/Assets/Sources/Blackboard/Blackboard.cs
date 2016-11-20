@@ -19,7 +19,7 @@ namespace Descent.Data
         /// <summary>
         /// Blackboard Value(s).
         /// </summary>
-        private Dictionary<String, Object> Values;
+        private Dictionary<String, Object> _Blackboard;
 
         /// <summary>
         /// Blackboard Constructor.
@@ -27,7 +27,7 @@ namespace Descent.Data
         public Blackboard()
         {
             /* Create Dictionary */
-            Values = new Dictionary<String, Object>();
+            _Blackboard = new Dictionary<String, Object>();
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Descent.Data
         /// <returns>Object.</returns>
         public object GetObject(string Key)
         {
-            return Values[Key];
+            return (_Blackboard.ContainsKey(Key)) ? _Blackboard[Key] : null;
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Descent.Data
         /// <param name="Value">Value.</param>
         public void SetObject(string Key, object Value)
         {
-           Values[Key] = Value;
+            _Blackboard[Key] = Value;
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Descent.Data
         /// <returns>Value.</returns>
         public T GetValue<T>(string Key)
         {
-            return (T)Values[Key];
+            return (_Blackboard.ContainsKey(Key)) ? (T)_Blackboard[Key] : default(T);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Descent.Data
         /// <param name="Value">Value.</param>
         public void SetValue<T>(string Key, T Value)
         {
-            Values[Key] = Value;
+            _Blackboard[Key] = Value;
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
+using Descent.Helper;
 
 /// <summary>
 /// Gameboard Add View System.
@@ -42,19 +43,17 @@ public sealed class GameboardAddViewSystem : ISetPool, IReactiveSystem
         /* Loop Gameboard Entity(s). */
         foreach (var e in entities)
         {
-            /* Retrieve Prefab from Resources folder. */
-            var Resource = Resources.Load<GameObject>(e.asset.Source);
-
-            
             GameObject gameObject = null;
+
             try
             {
-                /* Instantiate new GameObject from prefab. */
-                gameObject = UnityEngine.Object.Instantiate(Resource);
+                gameObject = new GameObject("Tile " + e.asset.Source);
+                var renderer = gameObject.AddComponent<SpriteRenderer>();
+                renderer.sprite = Descent.Helper.Sprite.Get(e.asset.Source);
             }
-            catch (Exception)
+            catch (Exception Ex)
             {
-                Debug.Log("Cannot instantiate " + Resource);
+                throw Ex;
             }
 
             if (gameObject != null)
@@ -67,6 +66,11 @@ public sealed class GameboardAddViewSystem : ISetPool, IReactiveSystem
 
                 /* Create entity inspector for debugging purposes. */
                 gameObject.Link(e, _pool);
+
+                //DescentBehaviour EntityBahaviourScript = gameObject.GetComponent<DescentBehaviour>();
+                //if (EntityBahaviourScript != null) {
+                //    EntityBahaviourScript.Initialize(e, _pool);
+                //}
 
                 if (e.hasPosition)
                 {
