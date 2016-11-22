@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Descent.Test
 {
@@ -8,6 +9,15 @@ namespace Descent.Test
     /// </summary>
     public static class TestRunner
     {
+        /// <summary>
+        /// TestRunner Constructor.
+        /// </summary>
+        static TestRunner()
+        {
+            /* Configure. */
+            Assert.raiseExceptions = true;
+        }
+
         /// <summary>
         /// Run Method.
         /// </summary>

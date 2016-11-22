@@ -130,9 +130,6 @@
     <Reference Include="DOTweenEditor">
       <HintPath>Assets\Libraries\DOTween\Editor\DOTweenEditor.dll</HintPath>
     </Reference>
-    <Reference Include="nunitlite">
-      <HintPath>Assets\Libraries\NUnit Framework\nunitlite.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Descent.CSharp.csproj">

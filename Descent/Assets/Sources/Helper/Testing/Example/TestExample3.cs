@@ -1,20 +1,18 @@
 ﻿
 using UnityEngine;
 using System;
-using NUnit.Framework;
+using UnityEngine.Assertions;
 
 namespace Descent.Test
 {
     /// <summary>
     /// Test Example3 Class.
     /// </summary>
-    [TestFixture]
     public class TestExample3 : ITest
     {
         /// <summary>
         /// Run Method.
         /// </summary>
-        [Test]
         public void Run()
         {
             int x = 0;
