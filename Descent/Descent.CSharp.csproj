@@ -155,6 +155,7 @@
     <Compile Include="Assets\Sources\Blackboard\Interface\ISetObject.cs" />
     <Compile Include="Assets\Sources\Blackboard\Interface\ISetValue.cs" />
     <Compile Include="Assets\Sources\Features\Components\Gameboard\AssetComponent.cs" />
+    <Compile Include="Assets\Sources\Features\Components\Gameboard\GameboardElementComponent.cs" />
     <Compile Include="Assets\Sources\Features\Components\Gameboard\PositionComponent.cs" />
     <Compile Include="Assets\Sources\Features\Components\Gameboard\ViewComponent.cs" />
     <Compile Include="Assets\Sources\Features\Components\Occurrence\OccurrenceComponent.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Assets\Sources\Generated\AssetComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\GameboardAttribute.cs" />
     <Compile Include="Assets\Sources\Generated\GameboardComponentIds.cs" />
+    <Compile Include="Assets\Sources\Generated\GameboardElementComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\OccurrenceAttribute.cs" />
     <Compile Include="Assets\Sources\Generated\OccurrenceComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\OccurrenceComponentIds.cs" />

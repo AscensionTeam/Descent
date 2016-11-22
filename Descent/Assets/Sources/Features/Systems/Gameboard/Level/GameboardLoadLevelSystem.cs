@@ -5,6 +5,7 @@ using Entitas;
 using TiledSharp;
 using Descent.Data;
 using Descent.Helper;
+using System.Collections.Generic;
 
 // Created: 20/11/2016 ~ Alexander Hunt.
 
@@ -96,8 +97,21 @@ public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
             /* Cache Map . */
             Blackboard.Shared.SetObject("TileMap", Map);
 
-            /* Loop Map Layer(s). */
-            foreach (var TmxLayer in Map.Layers)
+            Dictionary<int, TmxTilesetTile> TmxTilesetTiles = new Dictionary<int, TmxTilesetTile>();
+
+            if (Map.Tilesets.Count > 0)
+            {
+                var Tileset = Map.Tilesets[0];
+
+                foreach (var t in Tileset.Tiles)
+                {
+                    TmxTilesetTiles.Add(t.Value.Id, t.Value);
+                }
+            }
+
+
+                /* Loop Map Layer(s). */
+                foreach (var TmxLayer in Map.Layers)
             {
                 /* Loop Map Layer Tile(s). */
                 foreach (var TmxTile in TmxLayer.Tiles)
@@ -106,12 +120,29 @@ public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
                     if (TmxTile.Gid > 0)
                     {
                         /* Create Tile. */
-                        Pools.sharedInstance.gameboard.CreateEntity()
+                        Entity Entity = Pools.sharedInstance.gameboard.CreateEntity()
                             /* Add Position Component. */
                             .AddPosition(TmxTile.X, -TmxTile.Y, 0)
                             /* Add Asset Component. */
-                            .AddAsset(Tile.TileSheetPath 
+                            .AddAsset(Tile.TileSheetPath
                             + TmxTile.Gid.ToString());
+
+                        /* Validate Map Property(s). */
+
+
+                        if (TmxTilesetTiles != null)
+                        {
+                            if (TmxTilesetTiles.ContainsKey(TmxTile.Gid - 1))
+                            {
+                                var Properties = TmxTilesetTiles[TmxTile.Gid - 1].Properties;
+                                if (Properties.ContainsKey("Type"))
+                                {
+                                    /* Add Gameboard Element Component. */
+                                    Entity.AddGameboardElement("Tile", Properties["Type"]);
+                                }
+                            }
+                 
+                        }
                     }
                 }
             }

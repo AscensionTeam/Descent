@@ -22,6 +22,12 @@ public class GameController : MonoBehaviour {
         var pools = Pools.sharedInstance;
         pools.SetAllPools();
 
+
+        Occurrence.Level.LoadLevel("FirstBlood");
+
+
+
+
         _Systems = CreateSystems(pools);
         _Systems.Initialize();
     }
@@ -57,6 +63,7 @@ public class GameController : MonoBehaviour {
 
             /* Occurrence */
             .Add(pools.occurrence.CreateSystem(new OccurrenceExecuteSystem()))
+            .Add(pools.occurrence.CreateSystem(new OccurrenceCleanupSystem()))
 
             /* Level */
             .Add(pools.gameboard.CreateSystem(new GameboardUnloadLevelSystem()))
@@ -66,9 +73,6 @@ public class GameController : MonoBehaviour {
             /* Render */
             .Add(pools.gameboard.CreateSystem(new GameboardRemoveViewSystem()))
             .Add(pools.gameboard.CreateSystem(new GameboardAddViewSystem()))
-            .Add(pools.gameboard.CreateSystem(new GameboardUpdateViewPositionSystem()))
-
-            /* Cleanup */
-            .Add(pools.occurrence.CreateSystem(new OccurrenceCleanupSystem()));
+            .Add(pools.gameboard.CreateSystem(new GameboardUpdateViewPositionSystem()));
     }
 }
