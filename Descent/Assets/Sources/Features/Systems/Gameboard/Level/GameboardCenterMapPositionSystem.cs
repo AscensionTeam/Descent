@@ -19,6 +19,7 @@ public class GameboardCenterMapPositionSystem : IInitializeSystem, IExecuteSyste
     /// </summary>
     public void Initialize()
     {
+
         /* Register OnOccurrence Callback. */
         Occurrence.OnOccurrence += OnOccurrence;
     }

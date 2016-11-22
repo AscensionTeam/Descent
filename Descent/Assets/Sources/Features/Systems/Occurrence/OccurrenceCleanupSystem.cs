@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using Descent.Helper;
+using Entitas;
 
 /// <summary>
 /// Occurrence Cleanup System.
@@ -25,6 +26,8 @@ public class OccurrenceCleanupSystem : ISetPool, IExecuteSystem
     /// </summary>
     public void Execute()
     {
+        Logger.Shared.LogSystem(this, "Running Cleanup. ");
+
         /* Loop Action Entity(s). */
         foreach (var e in _pool.GetEntities())
         {

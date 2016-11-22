@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.4.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -82,6 +84,9 @@
     <Reference Include="DOTween50">
       <HintPath>Assets\Libraries\DOTween\DOTween50.dll</HintPath>
     </Reference>
+    <Reference Include="nunitlite">
+      <HintPath>Assets\Libraries\NUnit Framework\nunitlite.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Libraries\DOTween\Examples\Basics.cs" />
@@ -145,6 +150,7 @@
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\GameObjectDestroyExtension.cs" />
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\PoolObserver\PoolObserver.cs" />
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\PoolObserver\PoolObserverBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Behaviour\TestRunnerBehaviour.cs" />
     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
     <Compile Include="Assets\Scripts\Controllers\TestController.cs" />
     <Compile Include="Assets\Scripts\Entitas\EntityLink.cs" />
@@ -183,9 +189,16 @@
     <Compile Include="Assets\Sources\Generated\Pools.cs" />
     <Compile Include="Assets\Sources\Generated\PositionComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\ViewComponentGeneratedExtension.cs" />
+    <Compile Include="Assets\Sources\Helper\Logger\Interface\ILogger.cs" />
+    <Compile Include="Assets\Sources\Helper\Logger\Logger.cs" />
     <Compile Include="Assets\Sources\Helper\Occurrence\Occurrence.cs" />
     <Compile Include="Assets\Sources\Helper\Occurrence\OccurrenceType.cs" />
     <Compile Include="Assets\Sources\Helper\Sprite.cs" />
+    <Compile Include="Assets\Sources\Helper\Testing\Example\TestExample1.cs" />
+    <Compile Include="Assets\Sources\Helper\Testing\Example\TestExample2.cs" />
+    <Compile Include="Assets\Sources\Helper\Testing\Example\TestExample3.cs" />
+    <Compile Include="Assets\Sources\Helper\Testing\Interface\ITest.cs" />
+    <Compile Include="Assets\Sources\Helper\Testing\TestRunner.cs" />
     <Compile Include="Assets\Sources\Helper\Tile.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,5 +211,6 @@
     <None Include="Assets\Resources\Map\FirstBlood.xml" />
     <None Include="Assets\Resources\Map\TestLevel.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

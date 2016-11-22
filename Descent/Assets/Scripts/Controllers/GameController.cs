@@ -22,12 +22,6 @@ public class GameController : MonoBehaviour {
         var pools = Pools.sharedInstance;
         pools.SetAllPools();
 
-
-        Occurrence.Level.LoadLevel("FirstBlood");
-
-
-
-
         _Systems = CreateSystems(pools);
         _Systems.Initialize();
     }
@@ -48,8 +42,12 @@ public class GameController : MonoBehaviour {
     /// On Controller Destoryed.
     /// </summary>
     void OnDestroy() {
-        /* Shutdown Entitas. */
-        _Systems.TearDown();
+
+        if (_Systems != null)
+        {
+            /* Shutdown Entitas. */
+            _Systems.TearDown();
+        }
     }
 
     /// <summary>

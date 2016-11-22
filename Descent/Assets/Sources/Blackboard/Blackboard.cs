@@ -12,10 +12,27 @@ namespace Descent.Data
     public class Blackboard : IBlackboard
     {
         /// <summary>
-        /// Blackboard Shared Instance.
+        /// Shared Blackboard Instance.
         /// </summary>
-        public static Blackboard Shared = new Blackboard();
-        
+        private static Blackboard _Shared = new Blackboard();
+
+        /// <summary>
+        /// Shared Blackboard Property.
+        /// </summary>
+        public static Blackboard Shared
+        {
+            get
+            {
+                /* Initialize Blackboard. */
+                if (_Shared == null) {
+                    _Shared = new Blackboard();
+                }
+
+                /* Return Blackboard. */
+                return _Shared;
+            }
+        }
+
         /// <summary>
         /// Blackboard Value(s).
         /// </summary>
