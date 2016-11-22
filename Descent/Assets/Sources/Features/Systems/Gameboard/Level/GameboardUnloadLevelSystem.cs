@@ -1,9 +1,6 @@
-﻿using Descent.Data;
+﻿using Entitas;
+using Descent.Data;
 using Descent.Helper;
-using Entitas;
-
-using System;
-using UnityEngine;
 
 // Created: 20/11/2016 ~ Alexander Hunt.
 
@@ -21,7 +18,7 @@ public class GameboardUnloadLevelSystem : IInitializeSystem, IExecuteSystem
     public void Initialize()
     {
         /* Register OnOccurrence Callback. */
-        OccurrenceExecuteSystem.OnOccurrence += OnOccurrence;
+        Occurrence.OnOccurrence += OnOccurrence;
     }
 
     /// <summary>

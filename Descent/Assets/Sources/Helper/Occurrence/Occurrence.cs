@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using System;
+using Entitas;
 
 namespace Descent.Helper
 {
@@ -10,13 +11,30 @@ namespace Descent.Helper
     public static class Occurrence
     {
         /// <summary>
+        /// OnOccurrence Event.
+        /// </summary>
+        public static event Action<OccurrenceComponent> OnOccurrence;
+
+        /// <summary>
+        /// Create Occurrence Signal Method.
+        /// </summary>
+        /// <param name="Occurrence">Occurrence.</param>
+        public static void CreateOccurrenceSignal(OccurrenceComponent Occurrence)
+        {
+            /* If OnCurrence Event(s). */
+            if (OnOccurrence != null) {
+                OnOccurrence.Invoke(Occurrence);
+            }
+        }
+
+        /// <summary>
         /// Create Occurrence Method.
         /// </summary>
         /// <param name="Layer">Occurrence Layer.</param>
         /// <param name="Type">Occurrence Type.</param>
         /// <param name="Args">Occurrence Argument(s).</param>
         /// <returns>Entity.</returns>
-        public static Entity Create(int Layer, string Type, params object[] Args)
+        public static Entity CreateOccurrence(int Layer, string Type, params object[] Args)
         {
             /* Create & Return Occurrence Entity. */
             return Pools.sharedInstance.occurrence.CreateEntity()

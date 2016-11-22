@@ -1,16 +1,12 @@
 ﻿using System;
 using Entitas;
+using Descent.Helper;
 
 /// <summary>
 /// Occurrence Execute System.
 /// </summary>
 public class OccurrenceExecuteSystem : ISetPool, IExecuteSystem
 {
-    /// <summary>
-    /// OnOccurrence Event.
-    /// </summary>
-    public static event Action<OccurrenceComponent> OnOccurrence;
-
     /// <summary>
     /// Occurrence Pool.
     /// </summary>
@@ -37,10 +33,8 @@ public class OccurrenceExecuteSystem : ISetPool, IExecuteSystem
             /* Has Occurrence Component. */
             if (e.hasOccurrence)
             {
-                /* If OnCurrence Event(s). */
-                if (OnOccurrence != null) {
-                    OnOccurrence.Invoke(e.occurrence);
-                }
+                /* Create Occurrence Signal. */
+                Occurrence.CreateOccurrenceSignal(e.occurrence);
             }
         }
     }

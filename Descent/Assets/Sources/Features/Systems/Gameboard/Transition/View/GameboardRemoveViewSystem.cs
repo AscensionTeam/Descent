@@ -1,8 +1,6 @@
-﻿using Entitas;
-
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 using UnityEngine;
+using Entitas;
 
 /// <summary>
 /// Gameboard Remove View System.

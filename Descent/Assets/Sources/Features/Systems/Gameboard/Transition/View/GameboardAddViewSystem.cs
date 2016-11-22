@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Entitas;
+﻿using System.Collections.Generic;
+using System;
 using UnityEngine;
-using Descent.Helper;
+using Entitas;
 
 /// <summary>
 /// Gameboard Add View System.
@@ -66,11 +65,6 @@ public sealed class GameboardAddViewSystem : ISetPool, IReactiveSystem
 
                 /* Create entity inspector for debugging purposes. */
                 gameObject.Link(e, _pool);
-
-                //DescentBehaviour EntityBahaviourScript = gameObject.GetComponent<DescentBehaviour>();
-                //if (EntityBahaviourScript != null) {
-                //    EntityBahaviourScript.Initialize(e, _pool);
-                //}
 
                 if (e.hasPosition)
                 {

@@ -1,11 +1,10 @@
-﻿using Descent.Data;
-using Descent.Helper;
-using Entitas;
-
-using System;
+﻿using System;
 using System.IO;
-using TiledSharp;
 using UnityEngine;
+using Entitas;
+using TiledSharp;
+using Descent.Data;
+using Descent.Helper;
 
 // Created: 20/11/2016 ~ Alexander Hunt.
 
@@ -23,7 +22,7 @@ public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
     public void Initialize()
     {
         /* Register OnOccurrence Callback. */
-        OccurrenceExecuteSystem.OnOccurrence += OnOccurrence;
+        Occurrence.OnOccurrence += OnOccurrence;
     }
 
     /// <summary>
@@ -79,6 +78,11 @@ public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
                 BuildLevel(Map);
             }
         }
+        else
+        {
+            /* UnImpemented Feature. */
+            throw new NotImplementedException("External Level Loading Not Implemented.");
+        }
     }
 
     /// <summary>
@@ -93,19 +97,21 @@ public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
             Blackboard.Shared.SetObject("TileMap", Map);
 
             /* Loop Map Layer(s). */
-            foreach (var Layer in Map.Layers)
+            foreach (var TmxLayer in Map.Layers)
             {
                 /* Loop Map Layer Tile(s). */
-                foreach (var Tile in Layer.Tiles)
+                foreach (var TmxTile in TmxLayer.Tiles)
                 {
                     /* Tile Exist(s)? */
-                    if (Tile.Gid > 0)
+                    if (TmxTile.Gid > 0)
                     {
                         /* Create Tile. */
                         Pools.sharedInstance.gameboard.CreateEntity()
-                            .AddPosition(Tile.X, -Tile.Y, 0)
-                            .AddAsset(Descent.Helper.Tile.TileSheetPath +
-                                      Tile.Gid.ToString());
+                            /* Add Position Component. */
+                            .AddPosition(TmxTile.X, -TmxTile.Y, 0)
+                            /* Add Asset Component. */
+                            .AddAsset(Tile.TileSheetPath 
+                            + TmxTile.Gid.ToString());
                     }
                 }
             }

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using DG.Tweening;
 using Entitas;
-using UnityEngine;
 
 /// <summary>
 /// Gameboard Update View Position System.

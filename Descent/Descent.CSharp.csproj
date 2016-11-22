@@ -145,10 +145,7 @@
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\GameObjectDestroyExtension.cs" />
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\PoolObserver\PoolObserver.cs" />
     <Compile Include="Assets\Libraries\Entitas\Unity\VisualDebugging\PoolObserver\PoolObserverBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviours\DescentBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviours\TileBehaviour.cs" />
     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
-    <Compile Include="Assets\Scripts\Controllers\SoundController.cs" />
     <Compile Include="Assets\Scripts\Controllers\TestController.cs" />
     <Compile Include="Assets\Scripts\Entitas\EntityLink.cs" />
     <Compile Include="Assets\Sources\Blackboard\Blackboard.cs" />

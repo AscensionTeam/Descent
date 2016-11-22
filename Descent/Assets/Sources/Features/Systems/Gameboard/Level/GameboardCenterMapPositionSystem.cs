@@ -1,10 +1,8 @@
-﻿using Descent.Data;
-using Descent.Helper;
+﻿using UnityEngine;
 using Entitas;
-
-using System;
 using TiledSharp;
-using UnityEngine;
+using Descent.Data;
+using Descent.Helper;
 
 // Created: 20/11/2016 ~ Alexander Hunt.
 
@@ -22,7 +20,7 @@ public class GameboardCenterMapPositionSystem : IInitializeSystem, IExecuteSyste
     public void Initialize()
     {
         /* Register OnOccurrence Callback. */
-        OccurrenceExecuteSystem.OnOccurrence += OnOccurrence;
+        Occurrence.OnOccurrence += OnOccurrence;
     }
 
     /// <summary>
