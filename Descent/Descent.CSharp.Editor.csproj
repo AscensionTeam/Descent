@@ -130,6 +130,12 @@
     <Reference Include="DOTweenEditor">
       <HintPath>Assets\Libraries\DOTween\Editor\DOTweenEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Data.SqliteClient">
+      <HintPath>Assets\Plugins\Mono.Data.SqliteClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>Assets\Plugins\System.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Descent.CSharp.csproj">
@@ -222,6 +228,7 @@
     <None Include="Assets\Libraries\DOTween\Editor\DOTweenEditor.XML" />
     <None Include="Assets\Libraries\DOTween\readme.txt" />
     <None Include="Assets\Resources\Map\FirstBlood.xml" />
+    <None Include="Assets\Resources\Map\Template.xml" />
     <None Include="Assets\Resources\Map\TestLevel.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

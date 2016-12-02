@@ -19,9 +19,14 @@ public class GameController : MonoBehaviour {
     /// </summary>
     void Start() {
 
+        /* Initialize Pool(s). */
         var pools = Pools.sharedInstance;
         pools.SetAllPools();
 
+        /* Configure Log Level. */
+        Descent.Helper.Logger.Shared.LogLevel = LogLevel.None;
+
+        /* Initialize System(s). */
         _Systems = CreateSystems(pools);
         _Systems.Initialize();
     }

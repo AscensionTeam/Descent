@@ -24,7 +24,7 @@ public class MainMenuUI : MonoBehaviour
             myDropdownValueChangedHandler(myDropdown);
         });
 
-        connectionString = "URI=file:" + Application.dataPath + "DDatabase.db";
+        connectionString = "URI=file:" + Application.dataPath + "DescentDatabase.db";
 
         speedText.text = "";
         healthText.text = "";

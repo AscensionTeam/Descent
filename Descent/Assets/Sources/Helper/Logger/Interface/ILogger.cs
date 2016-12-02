@@ -8,28 +8,28 @@ namespace Descent.Helper
     public interface ILogger
     {
         /// <summary>
-        /// Log Message Method.
+        /// Log Info Method.
         /// </summary>
         /// <param name="Message">Message.</param>
-        void Log(object Message);
+        void LogInfo(object Message);
 
         /// <summary>
-        /// Log Warning Message Method.
+        /// Log Warning Method.
         /// </summary>
         /// <param name="Message">Message.</param>
         void LogWarning(object Message);
 
         /// <summary>
-        /// Log Error Message Method.
+        /// Log Error Method.
         /// </summary>
         /// <param name="Message">Message.</param>
         void LogError(object Message);
 
         /// <summary>
-        /// Log System Method.
+        /// Log System Info Method.
         /// </summary>
         /// <param name="Sender">Sender.</param>
         /// <param name="Message">Message.</param>
-        void LogSystem(object Sender, object Message);
+        void LogSystemInfo(object Sender, object Message);
     }
 }

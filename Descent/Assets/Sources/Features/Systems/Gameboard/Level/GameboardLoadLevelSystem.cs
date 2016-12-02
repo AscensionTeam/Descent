@@ -76,7 +76,14 @@ public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
                 var Map = new TmxMap(ResourceStream);
 
                 /* Build Level. */
-                BuildLevel(Map);
+                if (BuildLevel(Map))
+                {
+                    /* Cache Map Title. */
+                    Blackboard.Shared.SetObject("TileMapTitle", File);
+
+                    /* Invoke Signal. */
+                    Occurrence.Level.Signal.CreateLevelLoadedSignal(File);
+                }
             }
         }
         else
@@ -90,7 +97,7 @@ public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
     /// Build Level Method.
     /// </summary>
     /// <param name="Map">Map.</param>
-    private void BuildLevel(TmxMap Map)
+    private bool BuildLevel(TmxMap Map)
     {
         if (Map != null)
         {
@@ -141,11 +148,16 @@ public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
                                     Entity.AddGameboardElement("Tile", Properties["Type"]);
                                 }
                             }
-                 
                         }
                     }
                 }
             }
+
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

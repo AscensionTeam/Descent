@@ -26,7 +26,7 @@ public class OccurrenceCleanupSystem : ISetPool, IExecuteSystem
     /// </summary>
     public void Execute()
     {
-        Logger.Shared.LogSystem(this, "Running Cleanup. ");
+        Logger.Shared.LogSystemInfo(this, "Running Cleanup. ");
 
         /* Loop Action Entity(s). */
         foreach (var e in _pool.GetEntities())

@@ -62,7 +62,14 @@ public class GameboardUnloadLevelSystem : IInitializeSystem, IExecuteSystem
             Pools.sharedInstance.gameboard.DestroyEntity(e);
         }
 
+        if (Pools.sharedInstance.gameboard.count == 0)
+        {
+            /* Invoke Signal. */
+            Occurrence.Level.Signal.CreateLevelUnloadedSignal(Blackboard.Shared.GetValue<string>("TileMapTitle"));
+        }
+
         /* Remove Cached Map. */
         Blackboard.Shared.SetObject("TileMap", null);
+        Blackboard.Shared.SetObject("TileMapTitle", null);
     }
 }

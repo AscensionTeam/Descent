@@ -16,14 +16,22 @@ namespace Descent.Helper
         public static event Action<OccurrenceComponent> OnOccurrence;
 
         /// <summary>
-        /// Create Occurrence Signal Method.
+        /// Signal Class.
         /// </summary>
-        /// <param name="Occurrence">Occurrence.</param>
-        public static void CreateOccurrenceSignal(OccurrenceComponent Occurrence)
+        public static class Signal
         {
-            /* If OnCurrence Event(s). */
-            if (OnOccurrence != null) {
-                OnOccurrence.Invoke(Occurrence);
+            /// <summary>
+            /// Create Occurrence Signal Method.
+            /// </summary>
+            /// <param name="Occurrence">Occurrence.</param>
+            public static void CreateOccurrenceSignal(OccurrenceComponent Occurrence)
+            {
+                /* If OnCurrence Event(s). */
+                if (OnOccurrence != null)
+                {
+                    /* Invoke Event. */
+                    OnOccurrence.Invoke(Occurrence);
+                }
             }
         }
 
@@ -47,6 +55,44 @@ namespace Descent.Helper
         /// </summary>
         public static class Level
         {
+            public static event Action<String> OnLevelUnloaded;
+            public static event Action<String> OnLevelLoaded;
+
+            /// <summary>
+            ///  Signal Class.
+            /// </summary>
+            public static class Signal
+            {
+
+                /// <summary>
+                /// Create Level Loaded Signal Method.
+                /// </summary>
+                /// <param name="Level">Level.</param>
+                public static void CreateLevelLoadedSignal(String Level)
+                {
+                    /* If OnLevelLoaded Event(s). */
+                    if (OnLevelLoaded != null)
+                    {
+                        /* Invoke Event. */
+                        OnLevelLoaded(Level);
+                    }
+                }
+
+                /// <summary>
+                /// Create Level Unloaded Signal Method.
+                /// </summary>
+                /// <param name="Level">Level.</param>
+                public static void CreateLevelUnloadedSignal(String Level)
+                {
+                    /* If OnLevelUnloaded Event(s). */
+                    if (OnLevelLoaded != null)
+                    {
+                        /* Invoke Event. */
+                        OnLevelLoaded(Level);
+                    }
+                }
+            }
+
             /// <summary>
             /// Unload Level.
             /// </summary>

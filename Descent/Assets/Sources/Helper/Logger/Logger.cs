@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Descent.Helper
 {
-    public enum LogLevel {None, Info };
+    public enum LogLevel {None, Info, Warning, Error, Fatal};
 
     /// <summary>
     /// Logger Class.
@@ -38,12 +38,42 @@ namespace Descent.Helper
         }
 
         /// <summary>
+        /// Log Level Property.
+        /// </summary>
+        public LogLevel LogLevel
+        {
+            get
+            {
+                /* Return Log Level. */
+                return _LogLevel;
+            }
+            set
+            {
+                /* Set Log Level. */
+                _LogLevel = value;
+            }
+        }
+
+        /// <summary>
+        /// Logger Constructor.
+        /// </summary>
+        public Logger()
+        {
+            /* Initialize Log Level. */
+            _LogLevel = LogLevel.Fatal;
+        }
+
+        /// <summary>
         /// Log Method.
         /// </summary>
         /// <param name="Message">Message.</param>
-        public void Log(object Message)
+        public void LogInfo(object Message)
         {
-            Debug.Log(Message);
+            if (_LogLevel > LogLevel.None)
+            {
+                /* Write To Console. */
+                Debug.Log(Message);
+            }
         }
 
         /// <summary>
@@ -52,7 +82,11 @@ namespace Descent.Helper
         /// <param name="Message">Message.</param>
         public void LogWarning(object Message)
         {
-            Debug.LogWarning(Message);
+            if (_LogLevel > LogLevel.Info)
+            {
+                /* Write To Console. */
+                Debug.LogWarning(Message);
+            }
         }
 
         /// <summary>
@@ -61,17 +95,25 @@ namespace Descent.Helper
         /// <param name="Message">Message.</param>
         public void LogError(object Message)
         {
-            Debug.LogError(Message);
+            if (_LogLevel > LogLevel.Warning)
+            {
+                /* Write To Console. */
+                Debug.LogError(Message);
+            }
         }
 
         /// <summary>
-        /// Log System Method.
+        /// Log System Info Method.
         /// </summary>
         /// <param name="Sender">Sender.</param>
         /// <param name="Message">Message.</param>
-        public void LogSystem(object Sender, object Message)
+        public void LogSystemInfo(object Sender, object Message)
         {
-            Debug.Log("[System][" + DateTime.Now + "] " + Sender.ToString() + ": " + Message);
+            if (_LogLevel > LogLevel.None)
+            {
+                /* Write To Console. */
+                Debug.Log("[SYSTEM (INFO)][" + DateTime.Now + "] " + Sender.ToString() + ": " + Message);
+            }
         }
     }
 }

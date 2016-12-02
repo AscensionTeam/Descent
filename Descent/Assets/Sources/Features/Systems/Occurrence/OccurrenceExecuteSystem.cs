@@ -34,7 +34,7 @@ public class OccurrenceExecuteSystem : ISetPool, IExecuteSystem
             if (e.hasOccurrence)
             {
                 /* Create Occurrence Signal. */
-                Occurrence.CreateOccurrenceSignal(e.occurrence);
+                Occurrence.Signal.CreateOccurrenceSignal(e.occurrence);
             }
         }
     }
