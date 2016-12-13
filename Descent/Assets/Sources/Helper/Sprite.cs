@@ -33,7 +33,7 @@ namespace Descent.Helper
         private static void Fetch()
         {
             /* Fetch Sprite(s). */
-            var Resource = Resources.LoadAll<UnityEngine.Sprite>("SpriteSheet/TileSheet");
+            var Resource = Resources.LoadAll<UnityEngine.Sprite>("SpriteSheet");
 
             /* Loop Sprite(s). */
             foreach (var Sprite in Resource)

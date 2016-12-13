@@ -12,18 +12,44 @@ using System.Collections.Generic;
 /// <summary>
 /// Gameboard Load Level System.
 /// </summary>
-public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
+public class GameboardLoadLevelSystem : IExecuteSystem, ISetPool
 {
-    /* Occurrence Component. */
+    /// <summary>
+    /// Gameboard Pool.
+    /// </summary>
+    Pool _pool;
+
+    /// <summary>
+    /// Occurrence Component.
+    /// </summary>
     OccurrenceComponent _Component = null;
 
     /// <summary>
-    /// Initialize Method.
+    /// Constructor.
     /// </summary>
-    public void Initialize()
+    public GameboardLoadLevelSystem()
     {
         /* Register OnOccurrence Callback. */
         Occurrence.OnOccurrence += OnOccurrence;
+    }
+
+    /// <summary>
+    /// Deconstructor.
+    /// </summary>
+    ~GameboardLoadLevelSystem()
+    {
+        /* Remove OnOccurrence Callback. */
+        Occurrence.OnOccurrence -= OnOccurrence;
+    }
+
+    /// <summary>
+    /// Set Pool Method.
+    /// </summary>
+    /// <param name="pool">Pool.</param>
+    public void SetPool(Pool pool)
+    {
+        /* Cache Pool. */
+        _pool = pool;
     }
 
     /// <summary>
@@ -104,48 +130,42 @@ public class GameboardLoadLevelSystem : IInitializeSystem, IExecuteSystem
             /* Cache Map . */
             Blackboard.Shared.SetObject("TileMap", Map);
 
-            Dictionary<int, TmxTilesetTile> TmxTilesetTiles = new Dictionary<int, TmxTilesetTile>();
-
-            if (Map.Tilesets.Count > 0)
+            /* Loop Map Layer(s). */
+            for (int LayerID = 0; LayerID < Map.Layers.Count; LayerID++)
             {
-                var Tileset = Map.Tilesets[0];
+                var Layer = Map.Layers[LayerID];
+                var TileSet = Map.Tilesets[LayerID];
 
-                foreach (var t in Tileset.Tiles)
-                {
-                    TmxTilesetTiles.Add(t.Value.Id, t.Value);
-                }
-            }
-
-
-                /* Loop Map Layer(s). */
-                foreach (var TmxLayer in Map.Layers)
-            {
                 /* Loop Map Layer Tile(s). */
-                foreach (var TmxTile in TmxLayer.Tiles)
+                for (int TileID = 0; TileID < Layer.Tiles.Count; TileID++)
                 {
+                    var TileSetTileList = TileSet.Tiles;
+                    var Tile = Layer.Tiles[TileID];
+
                     /* Tile Exist(s)? */
-                    if (TmxTile.Gid > 0)
+                    if (Tile.Gid > 0)
                     {
-                        /* Create Tile. */
-                        Entity Entity = Pools.sharedInstance.gameboard.CreateEntity()
-                            /* Add Position Component. */
-                            .AddPosition(TmxTile.X, -TmxTile.Y, 0)
-                            /* Add Asset Component. */
-                            .AddAsset(Tile.TileSheetPath
-                            + TmxTile.Gid.ToString());
+                        int FirstGid = TileSet.FirstGid;
+                        int Id = Tile.Gid - FirstGid;
 
-                        /* Validate Map Property(s). */
-
-
-                        if (TmxTilesetTiles != null)
+                        if (TileSetTileList.ContainsKey(Id))
                         {
-                            if (TmxTilesetTiles.ContainsKey(TmxTile.Gid - 1))
+                            var TileSetTile = TileSetTileList[Id];
+                            var TileSetTileInfo = TileSetTile.Properties;
+
+                            /* Create Tile. */
+                            Entity Entity = _pool.CreateEntity()
+                                /* Add Position Component. */
+                                .AddPosition(Tile.X, -Tile.Y, 0);
+
+                            if (TileSetTileInfo.ContainsKey("Type"))
                             {
-                                var Properties = TmxTilesetTiles[TmxTile.Gid - 1].Properties;
-                                if (Properties.ContainsKey("Type"))
+                                var Type = TileSetTileInfo["Type"];
+                                Entity.AddGameboardElement("Tile", Type);
+
+                                if (Type != "Spawn")
                                 {
-                                    /* Add Gameboard Element Component. */
-                                    Entity.AddGameboardElement("Tile", Properties["Type"]);
+                                    Entity.AddAsset(Descent.Helper.Tile.TileSheetPath + (Id+1).ToString());
                                 }
                             }
                         }

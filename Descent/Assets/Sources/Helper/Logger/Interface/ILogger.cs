@@ -31,5 +31,12 @@ namespace Descent.Helper
         /// <param name="Sender">Sender.</param>
         /// <param name="Message">Message.</param>
         void LogSystemInfo(object Sender, object Message);
+
+        /// <summary>
+        /// Log System Warning Method.
+        /// </summary>
+        /// <param name="Sender">Sender.</param>
+        /// <param name="Message">Message.</param>
+        void LogSystemWarning(object Sender, object Message);
     }
 }

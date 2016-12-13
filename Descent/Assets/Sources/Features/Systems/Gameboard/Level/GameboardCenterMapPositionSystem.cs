@@ -9,19 +9,27 @@ using Descent.Helper;
 /// <summary>
 /// Gameboard Center Map Position System.
 /// </summary>
-public class GameboardCenterMapPositionSystem : IInitializeSystem, IExecuteSystem
+public class GameboardCenterMapPositionSystem : IExecuteSystem
 {
     /* Occurrence Component. */
     OccurrenceComponent _Component = null;
 
     /// <summary>
-    /// Initialize Method.
+    /// Constructor.
     /// </summary>
-    public void Initialize()
+    public GameboardCenterMapPositionSystem()
     {
-
         /* Register OnOccurrence Callback. */
         Occurrence.OnOccurrence += OnOccurrence;
+    }
+
+    /// <summary>
+    /// Deconstructor.
+    /// </summary>
+    ~GameboardCenterMapPositionSystem()
+    {
+        /* Remove OnOccurrence Callback. */
+        Occurrence.OnOccurrence -= OnOccurrence;
     }
 
     /// <summary>

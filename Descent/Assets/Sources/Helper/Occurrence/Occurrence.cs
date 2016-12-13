@@ -1,5 +1,6 @@
 ﻿using System;
 using Entitas;
+using Descent.Helper.MetaData;
 
 namespace Descent.Helper
 {
@@ -57,6 +58,7 @@ namespace Descent.Helper
         {
             public static event Action<String> OnLevelUnloaded;
             public static event Action<String> OnLevelLoaded;
+            public static event EventHandler<CharacterInfo> OnCharacterAdded;
 
             /// <summary>
             ///  Signal Class.
@@ -70,11 +72,11 @@ namespace Descent.Helper
                 /// <param name="Level">Level.</param>
                 public static void CreateLevelLoadedSignal(String Level)
                 {
-                    /* If OnLevelLoaded Event(s). */
+                    /* If OnLevelLoaded Event(s) Contained. */
                     if (OnLevelLoaded != null)
                     {
                         /* Invoke Event. */
-                        OnLevelLoaded(Level);
+                        OnLevelLoaded.Invoke(Level);
                     }
                 }
 
@@ -84,11 +86,25 @@ namespace Descent.Helper
                 /// <param name="Level">Level.</param>
                 public static void CreateLevelUnloadedSignal(String Level)
                 {
-                    /* If OnLevelUnloaded Event(s). */
+                    /* If OnLevelUnloaded Event(s) Contained. */
                     if (OnLevelLoaded != null)
                     {
                         /* Invoke Event. */
-                        OnLevelLoaded(Level);
+                        OnLevelLoaded.Invoke(Level);
+                    }
+                }
+
+                /// <summary>
+                /// Create Character Added Signal Method.
+                /// </summary>
+                /// <param name="CharacterInfo">Info.</param>
+                public static void CreateCharacterAddedSignal(Object Sender, CharacterInfo Info)
+                {
+                    /* If OnCharacterAdded Event(s) Contained. */
+                    if (OnCharacterAdded != null)
+                    {
+                        /* Invoke Event. */
+                        OnCharacterAdded.Invoke(Sender, Info);
                     }
                 }
             }
@@ -117,6 +133,21 @@ namespace Descent.Helper
                 return Pools.sharedInstance.occurrence.CreateEntity()
                     /* Create Occurrence Component. */
                     .AddOccurrence(0, OccurrenceType.Level.LoadLevel, new object[] { File, Internal });
+            }
+
+            /// <summary>
+            /// Add Character Method.
+            /// </summary>
+            /// <param name="CharacterName">Character Name.</param>
+            /// <param name="AvatarIndex">Character Avatar Index.</param>
+            /// <param name="SpawnIndex">Spawn Index.</param>
+            /// <returns>Entity.</returns>
+            public static Entity AddCharacter(string CharacterName, int AvatarIndex, int SpawnIndex=-1)
+            {
+                /* Create & Return Occurrence Entity. */
+                return Pools.sharedInstance.occurrence.CreateEntity()
+                    /* Create Occurrence Component. */
+                    .AddOccurrence(0, OccurrenceType.Level.AddCharacter, new object[] { CharacterName, AvatarIndex, SpawnIndex });
             }
         }
     }

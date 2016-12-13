@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using Descent.Helper;
 using UnityEngine;
 using Entitas;
 
@@ -29,6 +30,9 @@ public sealed class GameboardAddViewSystem : ISetPool, IReactiveSystem
     /// <param name="pool">Pool.</param>
     public void SetPool(Pool pool)
     {
+        /* Log. */
+        DescentLogger.Shared.LogSystemInfo(this, "Set Pool.");
+
         /* Cache Pool. */
         _pool = pool;
     }
@@ -39,9 +43,15 @@ public sealed class GameboardAddViewSystem : ISetPool, IReactiveSystem
     /// <param name="entities">Entities.</param>
     public void Execute(List<Entity> entities)
     {
+        /* Log. */
+        DescentLogger.Shared.LogSystemInfo(this, "Running System.");
+
         /* Loop Gameboard Entity(s). */
         foreach (var e in entities)
         {
+            /* Log. */
+            DescentLogger.Shared.LogSystemInfo(this, "Creating View For Entity " + e.creationIndex);
+
             GameObject gameObject = null;
 
             try
@@ -57,11 +67,17 @@ public sealed class GameboardAddViewSystem : ISetPool, IReactiveSystem
 
             if (gameObject != null)
             {
+                /* Log. */
+                DescentLogger.Shared.LogSystemInfo(this, "GameObject Created, " + gameObject.name);
+
                 /* Parent new GameObject under 'View' GameObject. */
                 gameObject.transform.SetParent(_ViewContainer, false);
 
                 /* Add view component to entitas entity. */
                 e.AddView(gameObject);
+
+                /* Log. */
+                DescentLogger.Shared.LogSystemInfo(this, "View Linked. ");
 
                 /* Create entity inspector for debugging purposes. */
                 gameObject.Link(e, _pool);
@@ -72,7 +88,14 @@ public sealed class GameboardAddViewSystem : ISetPool, IReactiveSystem
                     var Position = e.position;
                     /* Update unity GameObject position. */
                     gameObject.transform.position = new Vector3(Position.X, Position.Z, Position.Z);
+
+                    /* Log. */
+                    DescentLogger.Shared.LogSystemInfo(this, "GameObject Position Updated, " + gameObject.transform.position);
                 }
+            }else
+            {
+                /* Log. */
+                DescentLogger.Shared.LogSystemWarning(this, "GameObject Failed To Be Created. ");
             }
         }
     }

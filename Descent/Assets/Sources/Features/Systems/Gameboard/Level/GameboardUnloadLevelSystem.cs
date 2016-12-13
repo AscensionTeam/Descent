@@ -7,18 +7,42 @@ using Descent.Helper;
 /// <summary>
 /// Gameboard Unload Level System.
 /// </summary>
-public class GameboardUnloadLevelSystem : IInitializeSystem, IExecuteSystem
+public class GameboardUnloadLevelSystem : IExecuteSystem, ISetPool
 {
+    /// <summary>
+    /// Gameboard Pool.
+    /// </summary>
+    Pool _pool;
+
     /* Occurrence Component. */
     OccurrenceComponent _Component = null;
 
     /// <summary>
-    /// Initialize Method.
+    /// Constructor.
     /// </summary>
-    public void Initialize()
+    public GameboardUnloadLevelSystem()
     {
         /* Register OnOccurrence Callback. */
         Occurrence.OnOccurrence += OnOccurrence;
+    }
+
+    /// <summary>
+    /// Deconstructor.
+    /// </summary>
+    ~GameboardUnloadLevelSystem()
+    {
+        /* Remove OnOccurrence Callback. */
+        Occurrence.OnOccurrence -= OnOccurrence;
+    }
+
+    /// <summary>
+    /// Set Pool Method.
+    /// </summary>
+    /// <param name="pool">Pool.</param>
+    public void SetPool(Pool pool)
+    {
+        /* Cache Pool. */
+        _pool = pool;
     }
 
     /// <summary>
@@ -56,13 +80,13 @@ public class GameboardUnloadLevelSystem : IInitializeSystem, IExecuteSystem
     private void UnloadLevel()
     {
         /* Loop Gameboard Entity(s). */
-        foreach (var e in Pools.sharedInstance.gameboard.GetEntities())
+        foreach (var e in _pool.GetEntities())
         {
             /* Destory Entity. */
-            Pools.sharedInstance.gameboard.DestroyEntity(e);
+            _pool.DestroyEntity(e);
         }
 
-        if (Pools.sharedInstance.gameboard.count == 0)
+        if (_pool.count == 0)
         {
             /* Invoke Signal. */
             Occurrence.Level.Signal.CreateLevelUnloadedSignal(Blackboard.Shared.GetValue<string>("TileMapTitle"));

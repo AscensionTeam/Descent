@@ -24,11 +24,20 @@ public class GameController : MonoBehaviour {
         pools.SetAllPools();
 
         /* Configure Log Level. */
-        Descent.Helper.Logger.Shared.LogLevel = LogLevel.None;
+        Descent.Helper.DescentLogger.Shared.LogLevel = LogLevel.None;
 
         /* Initialize System(s). */
         _Systems = CreateSystems(pools);
         _Systems.Initialize();
+
+        //TestGame();
+    }
+
+    void TestGame()
+    {
+        Occurrence.Level.LoadLevel("FirstBlood");
+
+        Occurrence.Level.AddCharacter("Mick", 0);
     }
 
     /// <summary>
@@ -72,6 +81,7 @@ public class GameController : MonoBehaviour {
             .Add(pools.gameboard.CreateSystem(new GameboardUnloadLevelSystem()))
             .Add(pools.gameboard.CreateSystem(new GameboardLoadLevelSystem()))
             .Add(pools.gameboard.CreateSystem(new GameboardCenterMapPositionSystem()))
+            .Add(pools.gameboard.CreateSystem(new GameboardAddCharacterSystem()))
 
             /* Render */
             .Add(pools.gameboard.CreateSystem(new GameboardRemoveViewSystem()))

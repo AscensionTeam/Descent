@@ -27,12 +27,21 @@ public class OccurrenceExecuteSystem : ISetPool, IExecuteSystem
     /// </summary>
     public void Execute()
     {
+        /* Log. */
+        DescentLogger.Shared.LogSystemInfo(this, "Running System.");
+
         /* Loop Occurrence Entity(s). */
         foreach (var e in _pool.GetEntities())
         {
+            /* Log. */
+            DescentLogger.Shared.LogSystemInfo(this, "Checking Entity " + e.creationIndex);
+
             /* Has Occurrence Component. */
             if (e.hasOccurrence)
             {
+                /* Log. */
+                DescentLogger.Shared.LogSystemInfo(this, "Occurrence Found, Calling Signal.");
+
                 /* Create Occurrence Signal. */
                 Occurrence.Signal.CreateOccurrenceSignal(e.occurrence);
             }
