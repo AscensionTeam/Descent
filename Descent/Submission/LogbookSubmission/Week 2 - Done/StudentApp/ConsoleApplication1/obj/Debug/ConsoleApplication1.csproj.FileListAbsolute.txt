@@ -1,0 +1,7 @@
+c:\users\jp1009\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+H:\Software Implementation\Week 2\StudentApp\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+H:\Software Implementation\Week 2\StudentApp\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+H:\Software Implementation\Week 2\StudentApp\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+H:\Software Implementation\Week 2\StudentApp\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+H:\Software Implementation\Week 2\StudentApp\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+H:\Software Implementation\Week 2\StudentApp\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

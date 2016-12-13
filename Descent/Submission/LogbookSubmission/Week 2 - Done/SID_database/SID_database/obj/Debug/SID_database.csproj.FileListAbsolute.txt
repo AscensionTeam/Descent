@@ -1,0 +1,9 @@
+c:\users\tb649\documents\visual studio 2015\Projects\SID_database\SID_database\bin\Debug\SID_database.exe.config
+c:\users\tb649\documents\visual studio 2015\Projects\SID_database\SID_database\bin\Debug\SID_database.exe
+c:\users\tb649\documents\visual studio 2015\Projects\SID_database\SID_database\bin\Debug\SID_database.pdb
+c:\users\tb649\documents\visual studio 2015\Projects\SID_database\SID_database\obj\Debug\SID_database.csprojResolveAssemblyReference.cache
+c:\users\tb649\documents\visual studio 2015\Projects\SID_database\SID_database\obj\Debug\SID_database.exe
+c:\users\tb649\documents\visual studio 2015\Projects\SID_database\SID_database\obj\Debug\SID_database.pdb
+H:\Software Implementation\Week 2\SID_database\SID_database\bin\Debug\SID_database.exe.config
+H:\Software Implementation\Week 2\SID_database\SID_database\obj\Debug\SID_database.exe
+H:\Software Implementation\Week 2\SID_database\SID_database\obj\Debug\SID_database.pdb

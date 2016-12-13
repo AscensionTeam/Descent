@@ -1,0 +1,12 @@
+c:\users\ms1494\documents\visual studio 2015\Projects\StudentTestWeek2\StudentTestWeek2\bin\Debug\StudentTestWeek2.exe.config
+c:\users\ms1494\documents\visual studio 2015\Projects\StudentTestWeek2\StudentTestWeek2\obj\Debug\StudentTestWeek2.csprojResolveAssemblyReference.cache
+c:\users\ms1494\documents\visual studio 2015\Projects\StudentTestWeek2\StudentTestWeek2\bin\Debug\StudentTestWeek2.exe
+c:\users\ms1494\documents\visual studio 2015\Projects\StudentTestWeek2\StudentTestWeek2\bin\Debug\StudentTestWeek2.pdb
+c:\users\ms1494\documents\visual studio 2015\Projects\StudentTestWeek2\StudentTestWeek2\obj\Debug\StudentTestWeek2.exe
+c:\users\ms1494\documents\visual studio 2015\Projects\StudentTestWeek2\StudentTestWeek2\obj\Debug\StudentTestWeek2.pdb
+H:\Software Implementation\Week 2\StudentTestWeek2\StudentTestWeek2\bin\Debug\StudentTestWeek2.exe.config
+H:\Software Implementation\Week 2\StudentTestWeek2\StudentTestWeek2\obj\Debug\StudentTestWeek2.exe
+H:\Software Implementation\Week 2\StudentTestWeek2\StudentTestWeek2\obj\Debug\StudentTestWeek2.pdb
+H:\Software Implementation\Week 2\StudentTestWeek2\StudentTestWeek2\bin\Debug\StudentTestWeek2.exe
+H:\Software Implementation\Week 2\StudentTestWeek2\StudentTestWeek2\bin\Debug\StudentTestWeek2.pdb
+H:\Software Implementation\Week 2\StudentTestWeek2\StudentTestWeek2\obj\Debug\StudentTestWeek2.csprojResolveAssemblyReference.cache
