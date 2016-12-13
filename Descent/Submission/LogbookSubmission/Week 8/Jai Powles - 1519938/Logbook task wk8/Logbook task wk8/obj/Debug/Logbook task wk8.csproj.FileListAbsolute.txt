@@ -1,0 +1,6 @@
+H:\3D Modelling and Animation\Logbook task wk8\Logbook task wk8\bin\Debug\Logbook task wk8.exe.config
+H:\3D Modelling and Animation\Logbook task wk8\Logbook task wk8\bin\Debug\Logbook task wk8.exe
+H:\3D Modelling and Animation\Logbook task wk8\Logbook task wk8\bin\Debug\Logbook task wk8.pdb
+H:\3D Modelling and Animation\Logbook task wk8\Logbook task wk8\obj\Debug\Logbook task wk8.csprojResolveAssemblyReference.cache
+H:\3D Modelling and Animation\Logbook task wk8\Logbook task wk8\obj\Debug\Logbook task wk8.exe
+H:\3D Modelling and Animation\Logbook task wk8\Logbook task wk8\obj\Debug\Logbook task wk8.pdb
