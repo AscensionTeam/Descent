@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour {
         _Systems = CreateSystems(pools);
         _Systems.Initialize();
 
-        //TestGame();
+        TestGame();
     }
 
     void TestGame()
