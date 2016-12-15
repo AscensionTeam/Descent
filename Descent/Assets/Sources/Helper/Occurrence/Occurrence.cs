@@ -142,12 +142,12 @@ namespace Descent.Helper
             /// <param name="AvatarIndex">Character Avatar Index.</param>
             /// <param name="SpawnIndex">Spawn Index.</param>
             /// <returns>Entity.</returns>
-            public static Entity AddCharacter(string CharacterName, int AvatarIndex, int SpawnIndex=-1)
+            public static Entity AddCharacter(string CharacterName, int AvatarIndex, int MovementCost, int SpawnIndex=-1)
             {
                 /* Create & Return Occurrence Entity. */
                 return Pools.sharedInstance.occurrence.CreateEntity()
                     /* Create Occurrence Component. */
-                    .AddOccurrence(0, OccurrenceType.Level.AddCharacter, new object[] { CharacterName, AvatarIndex, SpawnIndex });
+                    .AddOccurrence(0, OccurrenceType.Level.AddCharacter, new object[] { CharacterName, AvatarIndex, MovementCost, SpawnIndex });
             }
         }
     }

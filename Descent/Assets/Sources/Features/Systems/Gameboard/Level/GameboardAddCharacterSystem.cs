@@ -111,7 +111,8 @@ public class GameboardAddCharacterSystem : IExecuteSystem, ISetPool
                 /* Retrieve Character Occurrence Information. */
                 string CharacterName = (string)_Occurrence.Args[0];
                 int AvatarIndex = (int)_Occurrence.Args[1];
-                int SpawnIndex = (int)_Occurrence.Args[2];
+                int MovementCost = (int)_Occurrence.Args[2];
+                int SpawnIndex = (int)_Occurrence.Args[3];
                 
                 /* Spawn Point(s) Available? */
                 if (_SpawnPointUsed.Count < _SpawnPoint.Count)
@@ -128,6 +129,10 @@ public class GameboardAddCharacterSystem : IExecuteSystem, ISetPool
                             .AddPosition(Entity.position.X, Entity.position.Y, -1)
                             /* Add Gameboard Element Component. */
                             .AddGameboardElement("Player", CharacterName)
+                            /* Give Character Movement Cost. */
+                            .AddMovementCost(MovementCost)
+                            /* Make Character Selectable. */
+                            .IsSelectable(true)
                             /* Add Asset Component. */
                             .AddAsset("Player_" + AvatarIndex);
 

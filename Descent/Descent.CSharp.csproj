@@ -85,6 +85,9 @@
     <Reference Include="Mono.Data.SqliteClient">
       <HintPath>Assets\Plugins\Mono.Data.SqliteClient.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>Assets\Plugins\System.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data">
       <HintPath>Assets\Plugins\System.Data.dll</HintPath>
     </Reference>
@@ -93,9 +96,6 @@
     </Reference>
     <Reference Include="System.Security">
       <HintPath>Assets\Plugins\System.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Configuration">
-      <HintPath>Assets\Plugins\System.Configuration.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +165,7 @@
     <Compile Include="Assets\Scripts\Controllers\GAME_UI\DICE_SCRIPT.cs" />
     <Compile Include="Assets\Scripts\Controllers\GAME_UI\GetHeroInfo.cs" />
     <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\InputController.cs" />
     <Compile Include="Assets\Scripts\Controllers\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\Controllers\TITLE\ChangeToScene.cs" />
     <Compile Include="Assets\Scripts\Controllers\TITLE\HeroInfo.cs" />
@@ -178,13 +179,18 @@
     <Compile Include="Assets\Sources\Blackboard\Interface\ISetObject.cs" />
     <Compile Include="Assets\Sources\Blackboard\Interface\ISetValue.cs" />
     <Compile Include="Assets\Sources\Features\Components\Gameboard\AssetComponent.cs" />
+    <Compile Include="Assets\Sources\Features\Components\Gameboard\Gameboard.cs" />
     <Compile Include="Assets\Sources\Features\Components\Gameboard\GameboardElementComponent.cs" />
+    <Compile Include="Assets\Sources\Features\Components\Gameboard\MovementCost.cs" />
     <Compile Include="Assets\Sources\Features\Components\Gameboard\PositionComponent.cs" />
+    <Compile Include="Assets\Sources\Features\Components\Gameboard\SelectableComponent.cs" />
     <Compile Include="Assets\Sources\Features\Components\Gameboard\ViewComponent.cs" />
     <Compile Include="Assets\Sources\Features\Components\Occurrence\OccurrenceComponent.cs" />
     <Compile Include="Assets\Sources\Features\Systems\Gameboard\Level\GameboardAddCharacterSystem.cs" />
     <Compile Include="Assets\Sources\Features\Systems\Gameboard\Level\GameboardCenterMapPositionSystem.cs" />
     <Compile Include="Assets\Sources\Features\Systems\Gameboard\Level\GameboardLoadLevelSystem.cs" />
+    <Compile Include="Assets\Sources\Features\Systems\Gameboard\Level\GameboardSelectUnitSystem.cs" />
+    <Compile Include="Assets\Sources\Features\Systems\Gameboard\Level\GameboardUnitMovementSystem.cs" />
     <Compile Include="Assets\Sources\Features\Systems\Gameboard\Level\GameboardUnloadLevelSystem.cs" />
     <Compile Include="Assets\Sources\Features\Systems\Gameboard\Level\Tiled\ImageLayer.cs" />
     <Compile Include="Assets\Sources\Features\Systems\Gameboard\Level\Tiled\Layer.cs" />
@@ -199,13 +205,16 @@
     <Compile Include="Assets\Sources\Features\Systems\Occurrence\OccurrenceExecuteSystem.cs" />
     <Compile Include="Assets\Sources\Generated\AssetComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\GameboardAttribute.cs" />
+    <Compile Include="Assets\Sources\Generated\GameboardComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\GameboardComponentIds.cs" />
     <Compile Include="Assets\Sources\Generated\GameboardElementComponentGeneratedExtension.cs" />
+    <Compile Include="Assets\Sources\Generated\MovementCostComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\OccurrenceAttribute.cs" />
     <Compile Include="Assets\Sources\Generated\OccurrenceComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\OccurrenceComponentIds.cs" />
     <Compile Include="Assets\Sources\Generated\Pools.cs" />
     <Compile Include="Assets\Sources\Generated\PositionComponentGeneratedExtension.cs" />
+    <Compile Include="Assets\Sources\Generated\SelectableComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Generated\ViewComponentGeneratedExtension.cs" />
     <Compile Include="Assets\Sources\Helper\CharacterInfo.cs" />
     <Compile Include="Assets\Sources\Helper\Logger\DescentLogger.cs" />

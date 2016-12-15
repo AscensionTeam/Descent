@@ -37,7 +37,9 @@ public class GameController : MonoBehaviour {
     {
         Occurrence.Level.LoadLevel("FirstBlood");
 
-        Occurrence.Level.AddCharacter("Mick", 0);
+        Occurrence.Level.AddCharacter("Mick", 0, 3);
+        Occurrence.Level.AddCharacter("Bob", 1, 3);
+        Occurrence.Level.AddCharacter("Spiderman", 2, 20);
     }
 
     /// <summary>
@@ -82,6 +84,8 @@ public class GameController : MonoBehaviour {
             .Add(pools.gameboard.CreateSystem(new GameboardLoadLevelSystem()))
             .Add(pools.gameboard.CreateSystem(new GameboardCenterMapPositionSystem()))
             .Add(pools.gameboard.CreateSystem(new GameboardAddCharacterSystem()))
+            .Add(pools.gameboard.CreateSystem(new GameboardSelectUnitSystem()))
+            .Add(pools.gameboard.CreateSystem(new GameboardUnitMovementSystem()))
 
             /* Render */
             .Add(pools.gameboard.CreateSystem(new GameboardRemoveViewSystem()))
